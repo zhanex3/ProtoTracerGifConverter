@@ -71,7 +71,7 @@ def GetHeader(className):
 
     data += "\tstatic const uint8_t* RGBsequence[" + str(frameCount) + "];\n\n"
 
-    data += "\tImage image = Image(frame0000, rgbColors0000, " + str(w) + ", " + str(h) + ", "  + str(int(len(palette) / 3) - 1) + ");\n\n"
+    data += "\tImage image = Image(frame0000, rgbColors0000, " + str(w) + ", " + str(h) + ", "  + str(int(len(palette[0]) / 3)) + ");\n\n"
     data += "public:\n"
     data += "\t" + className + "Sequence(Vector2D size, Vector2D offset, float fps) : ImageSequenceRGB(&image, sequence, RGBsequence, (unsigned int)" + str(frameCount) + ", fps) {\n"
     data += "\t\timage.SetSize(size);\n"
